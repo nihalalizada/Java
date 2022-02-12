@@ -25,7 +25,7 @@ import static project.DBLoginData.*;
 
 /**
  *
- * @author Abdul Rahman zuletzt verändert 22.01.2022
+ * @author Nihal
  */
 public class SignUp extends javax.swing.JFrame {
     Connection conn = null;

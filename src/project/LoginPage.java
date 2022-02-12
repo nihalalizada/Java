@@ -1,6 +1,5 @@
 package project;
 
-
 import project.LoginAsPatient;
 import project.LoginAsAdmin;
 import java.awt.Dimension;
