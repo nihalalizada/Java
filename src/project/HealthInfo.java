@@ -18,7 +18,7 @@ import static project.DBLoginData.*;
 
 /**
  *
- * @author 49176 zuletzt verändert 17.01.2022 Htet
+ * @author Nihal zuletzt verändert 17.01.2022 Htet
  */
 public class HealthInfo extends javax.swing.JFrame {
 
