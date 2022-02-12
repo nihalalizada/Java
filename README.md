@@ -1,7 +1,7 @@
 # eHealth
 
-eHealth-Project of our java group.
+eHealth-Project of our Java Group.
 
 ## Subheader
 
-test lol
+test
