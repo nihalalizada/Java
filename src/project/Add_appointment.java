@@ -43,6 +43,7 @@ public class Add_appointment extends javax.swing.JFrame {
      * @return String
      * @throws ClassNotFoundException
      */
+    
     //Method to connect to Database and fetch a data 
     public String database(String query, String column) throws ClassNotFoundException {
         String data = null;
@@ -65,7 +66,7 @@ public class Add_appointment extends javax.swing.JFrame {
     /**
      *
      * @param ID patient ID
-     * @param doc Datas of the doctor
+     * @param doc Data of the doctor
      */
     public Add_appointment(String ID, Doctor doc) {
         id = ID;
@@ -241,17 +242,19 @@ public class Add_appointment extends javax.swing.JFrame {
             //Error Message if the time is empty
             if (jTextField1_time.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Time is empty");
-            } 
+            }
+            //Error Message if the time is incorrect for example: 28:00:00
             if(!(Pattern.matches("(?:[01][0-9]|2[0-3]):(?:[0-5][0-9]):(?:[0-5][0-9])",jTextField1_time.getText()))){
                                       
                 JOptionPane.showMessageDialog(null, "Please change your Time!");
             }
+            
             else {
                 try {
 
                     //Register Driver Class
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    //Query
+                    //Query to insert into Database table app
                     String query = "INSERT INTO app(ID,last_name,Date,Time,Reminder,doctor_name,doctor_address) VALUES (?,?,?,?,?,?,?);";
                     //Connection to the Database
                     conn = (Connection) DriverManager.getConnection(url, uname, password);
@@ -259,7 +262,7 @@ public class Add_appointment extends javax.swing.JFrame {
 
                     //Get last name from Database
                     String name = database("SELECT last_name from register where ID = ?", "last_name");
-
+                    //Get doctor name and address
                     String doctor_name = doctor.getName();
                     String doctor_address = doctor.getAddress();
 
@@ -336,7 +339,7 @@ public class Add_appointment extends javax.swing.JFrame {
                         
                         else {
                             JOptionPane.showMessageDialog(null, "Added an Appointment");
-                            //Insert those values into Database tbale "app"
+                            //Insert those values into Database table "app"
                             stmt.setString(1, id);
                             stmt.setString(2, name);
                             stmt.setString(3, date);
@@ -348,7 +351,7 @@ public class Add_appointment extends javax.swing.JFrame {
 
                             //Get the mail address from Database 
                             String mail = database("SELECT email from register where ID = ?", "email"); //Änderung 11.01.2022
-                            //Email mail_ = new Email(date_, mail,id);
+                            //revoke method from class Email
                             Email mail_ = new Email(date, time, mail, id);
 
                             //Confirmation mail 
