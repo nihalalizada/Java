@@ -99,7 +99,7 @@ public class PopUp_pdf extends javax.swing.JFrame {
             document.add(new Paragraph("Appointment: " + date + " at " + time + " o'clock"));
             document.add(new Paragraph("Doctor: " + doctor_name));
             document.add(new Paragraph("Address: " + doctor_address));
-            document.add(new Paragraph("\nIf you are unable to attend remember to reschedule or cancel the appointment"
+            document.add(new Paragraph("If you are unable to attend remember to reschedule or cancel the appointment"
                     + "as early as possible"));
 
             System.out.println("Sucessfully created a PDF File");
