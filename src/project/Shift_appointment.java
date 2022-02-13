@@ -28,7 +28,7 @@ public class Shift_appointment extends javax.swing.JFrame {
 
     Connection conn = null;
     PreparedStatement stmt = null;
-    String id;                              //Änderung 11.01.2022
+    String id;                              
 
     /**
      *
@@ -278,19 +278,20 @@ public class Shift_appointment extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int response = JOptionPane.showConfirmDialog(this, "Do you want to shift your Appointment?", "Confirm", JOptionPane.YES_NO_OPTION);
         if (response == JOptionPane.YES_OPTION) {
-            //Check if Inputs are empty or not 
+            //Error Message if input for time is empty 
             if (Time.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Time is empty");
             } 
+            //Error Message if the time is incorrect 
             if(!(Pattern.matches("(?:[01][0-9]|2[0-3]):(?:[0-5][0-9]):(?:[0-5][0-9])",Time.getText()))){
                                       
                 JOptionPane.showMessageDialog(null, "Please change your Time!");
             }
             else {
                 try {
-
+                    //Query
                     String query = "Update app set Date=? , Time =?, Reminder=? where Date=? AND Time=?";
-                    //Connect to database
+                    //Connection to database
                     conn = DriverManager.getConnection(url, uname, password);
                     stmt = conn.prepareStatement(query);
 
@@ -299,20 +300,23 @@ public class Shift_appointment extends javax.swing.JFrame {
                     String[] str = data.split(" ");
                     String old_date = str[0];
                     String old_time = str[1];
+                    
                     System.out.println(old_date + "\n");
                     System.out.println(old_time);
 
                     //Get the newly choosen Appointment Date, Time and reminder and overwrite them in Database 
                     Date datum = JDateChooser.getDate();
-
+                    //Error message if the Date input is empty
                     if (datum == null) {
                         JOptionPane.showMessageDialog(null, "Date is empty");
                     } 
                     else {
+                        //New Date and Time
                         String date = new SimpleDateFormat("dd-MM-yyyy").format(datum);
                         String time = Time.getText();
                         stmt.setString(1, date);
                         stmt.setString(2, time);
+                        //New reminder
                         String reminder = JComboBox_reminder.getSelectedItem().toString();
                         Date now = new Date();
                         //startdata = appointment date+ appointment time
@@ -352,7 +356,7 @@ public class Shift_appointment extends javax.swing.JFrame {
                         Date remindert = new Date(time2);
                         // reminders = the time that sent the reminder mail
                         String reminders = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(remindert);
-
+                        //Error Message if the appointment is before current time
                         if (now.compareTo(startdata) > 0) {
                             JOptionPane.showMessageDialog(null, "Please change to appropriate time");
                             Shift_appointment ap = new Shift_appointment(id);
@@ -368,7 +372,7 @@ public class Shift_appointment extends javax.swing.JFrame {
                             setVisible(false);
                         } 
                         else {
-
+                            
                             stmt.setString(3, reminder);
                             stmt.setString(4, old_date);
                             stmt.setString(5, old_time);
