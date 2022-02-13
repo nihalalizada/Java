@@ -74,7 +74,7 @@ public class PopUp_pdf extends javax.swing.JFrame {
 
     public void pdf() throws ClassNotFoundException {
         try {
-            //retrieve date and time of appointment and doctor datas from database
+            //retrieve date and time of appointment and doctor data from database
             String date = database("select Date from app where ID = ? ORDER BY Nr DESC LIMIT 1", "Date");
             String time = database("select Time from app where ID = ? ORDER BY Nr DESC LIMIT 1", "Time");
             String doctor_name = database("select doctor_name from app where ID = ? ORDER BY Nr DESC", "doctor_name");
