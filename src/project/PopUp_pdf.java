@@ -25,7 +25,7 @@ import javax.swing.JOptionPane;
 import static project.DBLoginData.*;
 
 /**
- *  PDF File
+ * PDF File
  * @author Htet Htet 
  */
 public class PopUp_pdf extends javax.swing.JFrame {
@@ -46,13 +46,12 @@ public class PopUp_pdf extends javax.swing.JFrame {
     }
 
     /**
-     *
+     * Method that retrieve data from Database
      * @param query
      * @param column
      * @return
      * @throws ClassNotFoundException
      */
-    //Method that retrieve data from Database
 
     public String database(String query, String column) throws ClassNotFoundException {
         String data = null;
@@ -62,7 +61,7 @@ public class PopUp_pdf extends javax.swing.JFrame {
         try {
             conn = (Connection) DriverManager.getConnection(url, uname, password);
             stmt = conn.prepareStatement(query);
-            stmt.setString(1, id);   //Änderung 11.01.2022
+            stmt.setString(1, id);   
             ResultSet rs = stmt.executeQuery();
             rs.next();
             data = rs.getString(column);
