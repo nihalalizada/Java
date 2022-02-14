@@ -42,7 +42,7 @@ public class Delete_Appointment extends javax.swing.JFrame {
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width/2-getWidth()/2, size.height/2 - getHeight()/2);   // to get window in center
-        //Insert the Appointments into ComboBox by calling the method Filecombo()
+        //Insert the Appointments into jComboBox by calling the method Filecombo()
         Filecombo();                                                    
     }    
 
@@ -74,7 +74,6 @@ public class Delete_Appointment extends javax.swing.JFrame {
             }
         }
         
-    //Method that retrieve Datas from Database
 
     /**
      *
@@ -83,6 +82,7 @@ public class Delete_Appointment extends javax.swing.JFrame {
      * @return
      * @throws ClassNotFoundException
      */
+    //Method that retrieve Datas from Database
     public String database(String query,String column) throws ClassNotFoundException
     {
             String data = null;
@@ -211,9 +211,9 @@ public class Delete_Appointment extends javax.swing.JFrame {
         int response = JOptionPane.showConfirmDialog(this,"Do you want to delete your Appointment?","Confirm",JOptionPane.YES_NO_OPTION);
         if(response == JOptionPane.YES_OPTION){        
             try {
-                
+                //Query 
                 String query = "Delete from app where Date=? AND Time=?";
-                //Connect to the database
+                //Connection to the database
                 conn = DriverManager.getConnection(url,uname,password);
                 stmt = conn.prepareStatement(query);
                 
@@ -223,9 +223,10 @@ public class Delete_Appointment extends javax.swing.JFrame {
                 String date = str[0];
                 String time = str[1];
                 
-                //Print the data and time to make sure its right
+                //Print the data and time to make sure its the right one
                 System.out.println(date+"\n");
                 System.out.println(time);
+                //delete Date and Time from Table app
                 stmt.setString(1,date);
                 stmt.setString(2,time); 
                 stmt.executeUpdate();
@@ -245,7 +246,6 @@ public class Delete_Appointment extends javax.swing.JFrame {
             String mail= database("SELECT email from register where ID=?","email");     //Änderung 11.01.2022
             
             //Reminder mail according to new Reminder time
-            //Email mail_ = new Email(date_,mail,id);
             Email mail_ = new Email(date,time,mail,id);
             mail_.senden(3);
             
