@@ -25,7 +25,7 @@ import javax.swing.JOptionPane;
 import static project.DBLoginData.*;
 
 /**
- *
+ * Appointment Management
  * @author Htet Htet
  */
 public class LoggedinAsPatient extends javax.swing.JFrame {

@@ -6,7 +6,7 @@
 package project;
 
 /**
- *
+ * Start of program
  * @author shawol
  */
 public class Project {

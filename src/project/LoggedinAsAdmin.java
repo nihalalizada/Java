@@ -9,9 +9,9 @@ import java.awt.Toolkit;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-/**
+/** User Management Dashboard
  *
- * @author Abdul Rahman zuletzt verändert 18.01.22 Htet: Optisch verändert und Log-out button eingefügt
+ * @author Abdul Rahman 
  */
 public class LoggedinAsAdmin extends javax.swing.JFrame {
 

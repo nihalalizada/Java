@@ -18,7 +18,7 @@ import static project.DBLoginData.*;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 /**
- *
+ *  Delete User File
  * @author Abdul Rahman
  */
 public class DeleteUserFile extends javax.swing.JFrame {

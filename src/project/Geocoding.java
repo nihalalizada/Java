@@ -9,7 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import project.Doctor;
 
-/**
+/** Supportive class containing geocoding methods
  *
  * @author Dwipa
  */

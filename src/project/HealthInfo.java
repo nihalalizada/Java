@@ -16,20 +16,20 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import static project.DBLoginData.*;
 
-/**
+/**  Adding health information
  *
- * @author Nihal zuletzt verändert 17.01.2022 Htet
+ * @author Nihal
  */
 public class HealthInfo extends javax.swing.JFrame {
 
     Connection conn = null;
     PreparedStatement stmt = null;
 
-    String id;                        //Veränderung 17.01.2022 id hinzugefügt Htet
+    String id;           
 
     HealthInfo(String ID) {
         initComponents();
-        id = ID;                        //Veränderung 17.01.2022 id     Htet
+        id = ID;                       
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);   // to get window in center
@@ -189,7 +189,7 @@ public class HealthInfo extends javax.swing.JFrame {
         try {
 
             String query;
-            query = "INSERT INTO health Values(?,?,?,?)";           //Veränderung 17.01.2022 5 -> 6 ?
+            query = "INSERT INTO health Values(?,?,?,?)";         
 
             conn = DriverManager.getConnection(url, uname, password);
             stmt = conn.prepareStatement(query);
@@ -201,7 +201,7 @@ public class HealthInfo extends javax.swing.JFrame {
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Health Information submitted successfully");
 
-            LoggedinAsPatient pa = new LoggedinAsPatient(id);                   //Veränderung 17.01.2022 weitergeleitet an LoginAsPatient nachdem man Healtinfo eingetragen hat
+            LoggedinAsPatient pa = new LoggedinAsPatient(id);       
             pa.setVisible(true);
             setVisible(false);
 

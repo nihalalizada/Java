@@ -18,7 +18,7 @@ import static project.DBLoginData.*;
  */
 
 /**
- *
+ * Access User Files
  * @author Abdul Rahman
  */
 public class AccessUserFile extends javax.swing.JFrame {

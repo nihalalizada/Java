@@ -22,7 +22,7 @@ import static project.DBLoginData.*;
 
 
 /**
- *
+ *  Delete Appointment
  * @author Htet Htet
  */
 public class Delete_Appointment extends javax.swing.JFrame {

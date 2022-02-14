@@ -28,7 +28,7 @@ import static project.Geocoding.*;
 import static project.DBLoginData.*;
 
 /**
- *
+ * Specifying doctor search
  * @author Dwipa
  */
 public class Make_Appointment extends javax.swing.JFrame implements ActionListener, ItemListener, ChangeListener {

@@ -17,7 +17,7 @@ import static project.DBLoginData.*;
  */
 
 /**
- *
+ *  Login Page for admin
  * @author Abdul Rahman
  */
 public class LoginAsAdmin extends javax.swing.JFrame {

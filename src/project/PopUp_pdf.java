@@ -25,7 +25,7 @@ import javax.swing.JOptionPane;
 import static project.DBLoginData.*;
 
 /**
- *
+ *  PDF File
  * @author Htet Htet 
  */
 public class PopUp_pdf extends javax.swing.JFrame {

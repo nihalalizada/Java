@@ -4,6 +4,11 @@ package project;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
+/** Welcome page
+ *
+ * @author Abdul, Dwipa
+ */
+
 public class WelcomePage extends javax.swing.JFrame {
 
 

@@ -4,7 +4,7 @@
  */
 package project;
 
-/**
+/** Database login data
  *
  * @author Dwipa
  */

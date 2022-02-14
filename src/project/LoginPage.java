@@ -1,9 +1,15 @@
 package project;
 
+
 import project.LoginAsPatient;
 import project.LoginAsAdmin;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+
+/**
+ * Main login page
+ * @author Abdul Rahman
+ */
 
 public class LoginPage extends javax.swing.JFrame {
 

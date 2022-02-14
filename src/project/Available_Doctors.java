@@ -12,7 +12,7 @@ import javax.swing.ListModel;
 import static project.Geocoding.*;
 
 /**
- *
+ * List of available Doctors 
  * @author Dwipa
  */
 public class Available_Doctors extends javax.swing.JFrame {

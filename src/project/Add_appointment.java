@@ -22,7 +22,7 @@ import java.util.regex.Pattern;
 import static project.DBLoginData.*;
 
 /**
- *
+ *  Add Appointment Date, Time and Reminder
  * @author Htet Htet 
  */
 public class Add_appointment extends javax.swing.JFrame {

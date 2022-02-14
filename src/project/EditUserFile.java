@@ -15,7 +15,7 @@ import static project.DBLoginData.*;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 /**
- *
+ * Edit User File
  * @author Abdul Rahman zuletzt geändert 31.01.2022
  */
 public class EditUserFile extends javax.swing.JFrame {

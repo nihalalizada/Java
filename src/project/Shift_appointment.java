@@ -20,7 +20,7 @@ import java.util.Date;
 import java.util.regex.Pattern;
 import static project.DBLoginData.*;
 
-/**
+/** Shift appointment
  *
  * @author Htet Htet
  */

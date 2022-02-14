@@ -28,7 +28,7 @@ import static project.DBLoginData.uname;
 import static project.DBLoginData.url;
 
 /**
- *
+ *  Confirmation, Change and Reminder Email
  * @author Htet Htet 
  */
 public class Email {

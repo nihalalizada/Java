@@ -4,7 +4,7 @@
  */
 package project;
 
-/**
+/** Setters and Getters for Doctor Data
  *
  * @author Dwipa
  */

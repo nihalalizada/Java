@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import static project.DBLoginData.*;
 /**
- *
+ *  Login page for patient
  * @author Nihal
  */
 public class LoginAsPatient extends javax.swing.JFrame {
